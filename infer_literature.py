@@ -9,7 +9,7 @@ from peft import PeftModel
 from transformers import GenerationConfig, AutoModelForCausalLM, AutoTokenizer
 
 from utils.prompter import Prompter
-
+# 这个文件的功能类似于generate.py，增加了 多轮对话 的功能
 if torch.cuda.is_available():
     device = "cuda"
 
@@ -56,7 +56,7 @@ def main(
     if not load_8bit:
         model.half()  # seems to fix bugs for some users.
 
-    model.eval()
+    model.eval()#设置模型为评估模式，禁用dropout等训练相关的操作
 
     if torch.__version__ >= "2" and sys.platform != "win32":
         model = torch.compile(model)
@@ -93,17 +93,17 @@ def main(
         output = tokenizer.decode(s)
         return prompter.get_response(output)
 
-    if single_or_multi == "multi":
+    if single_or_multi == "multi":#如果选择多轮对话
         response=""
         instruction=""
         for _ in range(0,5):  
             inp=input("请输入:")
-            inp="<user>: " + inp
-            instruction=instruction+inp
-            response=evaluate(instruction)
+            inp="<user>: " + inp#在用户输入前面添加<user>:
+            instruction=instruction+inp#将用户输入添加到instruction中
+            response=evaluate(instruction)#调用evaluate函数，获得输出
             response=response.replace('\n','')
             print("Response:", response)
-            instruction= instruction + " <bot>: " + response
+            instruction= instruction + " <bot>: " + response#将输出添加到instruction中
 
 
     elif single_or_multi == "single":

@@ -6,6 +6,7 @@
 
 BASE_MODEL="decapoda-research/llama-7b-hf"
 # 原始llama
+# 这里在验证，所以不使用lora
 o_cmd="python infer.py \
     --base_model ${BASE_MODEL} \
     --use_lora False \
@@ -25,9 +26,13 @@ m_cmd="python infer.py \
     --lora_weights "lora-llama-med" \
     --prompt_template 'med_template'"
 
+# 打印提示信息，表示正在运行原始llama模型
 echo "ori"
+# 执行原始llama模型的推理命令，并将输出重定向到o_tmp.txt文件
 eval $o_cmd > infer_result/o_tmp.txt
+# 打印提示信息，表示正在运行alpaca模型
 echo "alpaca"
+# 执行alpaca模型的推理命令，并将输出重定向到a_tmp.txt文件
 eval $a_cmd > infer_result/a_tmp.txt
 echo "med"
 eval $m_cmd > infer_result/m_tmp.txt

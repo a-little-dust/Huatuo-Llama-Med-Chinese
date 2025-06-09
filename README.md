@@ -258,10 +258,6 @@ https://wandb.ai/thinksoso/llama_med/runs/a5wgcnzt/overview?workspace=user-think
    
    A: 为SCIR实验室大语言模型命名一致性，中文医学大模型名称调整为"本草"。
 
-2. Q: 为什么是"华驼"而不是"华佗"？ 
-   
-   A: 叫”驼“是因为我们的基模型LLaMA是美洲驼，Alpaca是羊驼，受他们名字的启发以及华佗的谐音梗，我们将我们的模型起名为华驼。
-
 3. Q: 有使用中医理论或者中医数据吗？
     
    A: 目前还没有
@@ -280,13 +276,6 @@ https://wandb.ai/thinksoso/llama_med/runs/a5wgcnzt/overview?workspace=user-think
  
 
 
-
-## 项目参与者
-
-本项目由哈尔滨工业大学社会计算与信息检索研究中心健康智能组[王昊淳](https://haochun.wang) 、[杜晏睿](https://github.com/DYR1)、[刘驰](https://github.com/thinksoso)、[白睿](https://github.com/RuiBai1999)、[席奴瓦](https://github.com/rootnx)、[陈雨晗](https://github.com/Imsovegetable)、[强泽文](https://github.com/1278882181)、[陈健宇](https://github.com/JianyuChen01)、[李子健](https://github.com/FlowolfzzZ)、[范宇政](https://github.com/zheng-2001)、[刘佳彤](https://github.com/wdnnwza)完成，指导教师为[赵森栋](http://homepage.hit.edu.cn/stanzhao?lang=zh)副教授，秦兵教授以及刘挺教授。
-
-  
-
 ## 致谢
 
   
@@ -298,65 +287,15 @@ https://wandb.ai/thinksoso/llama_med/runs/a5wgcnzt/overview?workspace=user-think
 - Stanford Alpaca: https://github.com/tatsu-lab/stanford_alpaca
 - alpaca-lora by @tloen: https://github.com/tloen/alpaca-lora
 - CMeKG https://github.com/king-yyf/CMeKG_tools
-- 文心一言 https://yiyan.baidu.com/welcome 本项目的logo由文心一言自动生成
 
   
 
-## 免责声明
 
-本项目相关资源仅供学术研究之用，严禁用于商业用途。使用涉及第三方代码的部分时，请严格遵循相应的开源协议。模型生成的内容受模型计算、随机性和量化精度损失等因素影响，本项目无法对其准确性作出保证。本项目数据集绝大部分由模型生成，即使符合某些医学事实，也不能被用作实际医学诊断的依据。对于模型输出的任何内容，本项目不承担任何法律责任，亦不对因使用相关资源和输出结果而可能产生的任何损失承担责任。
-
-
-## Citation
-
-如果您使用了本项目的数据或者代码，或是我们的工作对您有所帮助，请声明引用
-
-
-
-知识微调：[Knowledge-tuning Large Language Models with Structured Medical Knowledge Bases for Trustworthy Response Generation in Chinese
-](https://arxiv.org/pdf/2309.04175.pdf)
-
-```
-@article{10.1145/3686807,
-author = {Wang, Haochun and Zhao, Sendong and Qiang, Zewen and Li, Zijian and Liu, Chi and Xi, Nuwa and Du, Yanrui and Qin, Bing and Liu, Ting},
-title = {Knowledge-tuning Large Language Models with Structured Medical Knowledge Bases for Trustworthy Response Generation in Chinese},
-year = {2024},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-issn = {1556-4681},
-url = {https://doi.org/10.1145/3686807},
-doi = {10.1145/3686807},
-abstract = {Large Language Models (LLMs) have demonstrated remarkable success in diverse natural language processing (NLP) tasks in general domains. However, LLMs sometimes generate responses with the hallucination about medical facts due to limited domain knowledge. Such shortcomings pose potential risks in the utilization of LLMs within medical contexts. To address this challenge, we propose knowledge-tuning, which leverages structured medical knowledge bases for the LLMs to grasp domain knowledge efficiently and facilitate trustworthy response generation. We also release cMedKnowQA, a Chinese medical knowledge question-answering dataset constructed from medical knowledge bases to assess the medical knowledge proficiency of LLMs. Experimental results show that the LLMs which are knowledge-tuned with cMedKnowQA, can exhibit higher levels of accuracy in response generation compared with vanilla instruction-tuning and offer a new trustworthy way for the domain adaptation of LLMs. We release our code and data at .},
-note = {Just Accepted},
-journal = {ACM Trans. Knowl. Discov. Data},
-month = aug,
-keywords = {Large Language Model, Medical Question Answering, Trustworthy Response Generation, Medical Knowledge Base}
-}
 ```
 
 首版技术报告: [Huatuo: Tuning llama model with chinese medical knowledge](https://arxiv.org/pdf/2304.06975)
 
-```
-@misc{wang2023huatuo,
-      title={HuaTuo: Tuning LLaMA Model with Chinese Medical Knowledge},
-      author={Haochun Wang and Chi Liu and Nuwa Xi and Zewen Qiang and Sendong Zhao and Bing Qin and Ting Liu},
-      year={2023},
-      eprint={2304.06975},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
-}
-```
 
 医学文献知识获取：[The CALLA Dataset: Probing LLMs’ Interactive Knowledge Acquisition from Chinese Medical Literature](https://arxiv.org/pdf/2309.04198.pdf)
 
-```
-@misc{du2023calla,
-      title={The CALLA Dataset: Probing LLMs' Interactive Knowledge Acquisition from Chinese Medical Literature}, 
-      author={Yanrui Du and Sendong Zhao and Muzhen Cai and Jianyu Chen and Haochun Wang and Yuhan Chen and Haoqiang Guo and Bing Qin},
-      year={2023},
-      eprint={2309.04198},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
-}
-```
 

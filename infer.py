@@ -11,6 +11,7 @@ from utils.prompter import Prompter
 
 if torch.cuda.is_available():
     device = "cuda"
+# 这个文件 支持从JSON文件中读取数据，批量推理
 
 def load_instruction(instruct_dir):
     input_data = []
@@ -18,7 +19,7 @@ def load_instruction(instruct_dir):
         lines = f.readlines()
         for line in lines:
             line = line.strip()
-            d = json.loads(line)
+            d = json.loads(line)  # 将JSON字符串转换为Python字典
             input_data.append(d)
     return input_data
 
@@ -94,7 +95,8 @@ def main(
 
     def infer_from_json(instruct_dir):
         input_data = load_instruction(instruct_dir)
-        for d in input_data:
+        # 如果evaluate是异步函数，那么可以并行处理，但这里不是异步函数，所以不能并行处理
+        for d in input_data:#依次处理
             instruction = d["instruction"]
             output = d["output"]
             print("###infering###")
